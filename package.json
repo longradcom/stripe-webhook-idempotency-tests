@@ -1,0 +1,24 @@
+{
+  "name": "stripe-webhook-idempotency-tests",
+  "version": "0.1.0",
+  "description": "Runnable acceptance tests for the retry, duplicate and partial-failure behaviour of a Stripe webhook handler.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "demo:seen-is-processed": "DEMO_HANDLER=seen-is-processed vitest run tests/demo.test.ts",
+    "demo:check-then-act": "DEMO_HANDLER=check-then-act vitest run tests/demo.test.ts"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@types/node": "^20.19.0",
+    "stripe": "^22.6.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  }
+}
